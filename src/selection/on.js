@@ -24,7 +24,7 @@ function contextListener(listener, index, group) {
     var event0 = event; // Events can be reentrant (e.g., focus).
     event = event1;
     try {
-      listener.call(this, this.__data__, index, group);
+      listener.call(this, this && this.__data__, index, group);
     } finally {
       event = event0;
     }
